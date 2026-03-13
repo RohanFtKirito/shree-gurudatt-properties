@@ -26,9 +26,9 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const baseUrl = "https://shreegurudattproperties.com";
-  
+
   let property = null;
-  
+
   try {
     property = await getPropertyBySlug(params.slug);
   } catch (error) {
@@ -39,24 +39,60 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!property) {
     property = staticProperties.find((p) => p.slug === params.slug) || null;
   }
-  
+
   if (!property) {
     return {
-      title: "Property Not Found | Shree GuruDatt Properties",
+      title: "Property Not Found | Shree Guru Datta Properties",
     };
   }
 
+  // Generate dynamic description
+  const location = property.location || "Goregaon";
+  const price = property.price || "Contact for price";
+  const type = property.type || "Property";
+  const config = property.configuration || "";
+  const status = property.status || "For Sale";
+
+  const dynamicDescription = config
+    ? `${status}: ${config} ${type} in ${location} at ${price}. Contact Shree Guru Datta Properties for details. ${property.description.substring(0, 100)}...`
+    : `${status}: ${type} in ${location} at ${price}. Contact Shree Guru Datta Properties for details. ${property.description.substring(0, 100)}...`;
+
   return {
-    title: `${property.title} | Shree GuruDatt Properties`,
-    description: property.description,
+    title: `${property.title} | Shree Guru Datta Properties`,
+    description: dynamicDescription,
+    keywords: [
+      property.title,
+      location,
+      type,
+      config || "",
+      status,
+      "Shree Guru Datta Properties",
+      "properties in Goregaon",
+      "real estate Mumbai",
+      price,
+    ].filter(Boolean).join(", "),
     alternates: {
       canonical: `${baseUrl}/property/${property.slug || params.slug}`,
     },
     openGraph: {
       title: property.title,
-      description: property.description,
+      description: dynamicDescription,
       url: `${baseUrl}/property/${property.slug || params.slug}`,
-      images: property.images,
+      images: property.images?.[0] ? [
+        {
+          url: property.images[0],
+          width: 1200,
+          height: 630,
+          alt: `${property.title} - Shree Guru Datta Properties`,
+        },
+      ] : [],
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: property.title,
+      description: dynamicDescription,
+      images: property.images?.[0] ? [property.images[0]] : [],
     },
   };
 }

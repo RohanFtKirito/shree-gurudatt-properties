@@ -2,15 +2,15 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { 
-  collection, 
-  query, 
-  getDocs, 
+import {
+  collection,
+  query,
+  getDocs,
   orderBy,
-  where 
+  where
 } from "firebase/firestore";
 import { db } from "@/lib/firebase";
-import { Building2, Plus, Eye, DollarSign } from "lucide-react";
+import { Building2, Plus, Eye, DollarSign, ArrowRight, MessageCircle, Settings, TrendingUp } from "lucide-react";
 
 interface PropertyStats {
   total: number;
@@ -65,102 +65,162 @@ export default function AdminDashboard() {
   }, []);
 
   return (
-    <div>
-      <div className="mb-8">
-        <h1 className="font-heading text-3xl font-bold text-foreground">
+    <div className="space-y-10">
+      {/* Header Section */}
+      <div className="mb-10">
+        <h1 className="font-heading text-4xl font-bold text-foreground mb-3">
           Dashboard
         </h1>
-        <p className="text-muted-foreground mt-1">
-          Welcome to Shree GuruDatt Properties Admin
+        <p className="text-lg text-muted-foreground">
+          Welcome to Shree Guru Datta Properties Admin
         </p>
       </div>
 
       {/* Stats Cards */}
-      <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mb-8">
-        <div className="bg-card border border-border rounded-lg p-6">
-          <div className="flex items-center gap-4">
-            <div className="p-3 bg-primary/10 rounded-lg">
-              <Building2 className="h-6 w-6 text-primary" />
+      <div>
+        <h2 className="font-heading text-xl font-semibold text-foreground mb-6">
+          Overview
+        </h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-muted-foreground mb-2">Total Properties</p>
+                <p className="text-4xl font-bold text-foreground">
+                  {loading ? "..." : stats.total}
+                </p>
+              </div>
+              <div className="h-14 w-14 rounded-xl bg-primary/10 flex items-center justify-center">
+                <Building2 className="h-7 w-7 text-primary" />
+              </div>
             </div>
-            <div>
-              <p className="text-sm text-muted-foreground">Total Properties</p>
-              <p className="text-2xl font-bold text-foreground">
-                {loading ? "..." : stats.total}
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div className="bg-card border border-border rounded-lg p-6">
-          <div className="flex items-center gap-4">
-            <div className="p-3 bg-green-500/10 rounded-lg">
-              <DollarSign className="h-6 w-6 text-green-500" />
-            </div>
-            <div>
-              <p className="text-sm text-muted-foreground">For Sale</p>
-              <p className="text-2xl font-bold text-foreground">
-                {loading ? "..." : stats.forSale}
-              </p>
+            <div className="mt-4 pt-4 border-t border-border">
+              <div className="flex items-center gap-2 text-sm">
+                <TrendingUp className="h-4 w-4 text-green-500" />
+                <span className="text-muted-foreground">All listings</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <div className="bg-card border border-border rounded-lg p-6">
-          <div className="flex items-center gap-4">
-            <div className="p-3 bg-blue-500/10 rounded-lg">
-              <Eye className="h-6 w-6 text-blue-500" />
+          <div className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-muted-foreground mb-2">For Sale</p>
+                <p className="text-4xl font-bold text-foreground">
+                  {loading ? "..." : stats.forSale}
+                </p>
+              </div>
+              <div className="h-14 w-14 rounded-xl bg-green-500/10 flex items-center justify-center">
+                <DollarSign className="h-7 w-7 text-green-500" />
+              </div>
             </div>
-            <div>
-              <p className="text-sm text-muted-foreground">For Rent</p>
-              <p className="text-2xl font-bold text-foreground">
-                {loading ? "..." : stats.forRent}
-              </p>
+            <div className="mt-4 pt-4 border-t border-border">
+              <div className="flex items-center gap-2 text-sm">
+                <TrendingUp className="h-4 w-4 text-green-500" />
+                <span className="text-muted-foreground">Properties for sale</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1">
+            <div className="flex items-center justify-between">
+              <div>
+                <p className="text-sm font-medium text-muted-foreground mb-2">For Rent</p>
+                <p className="text-4xl font-bold text-foreground">
+                  {loading ? "..." : stats.forRent}
+                </p>
+              </div>
+              <div className="h-14 w-14 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                <Eye className="h-7 w-7 text-blue-500" />
+              </div>
+            </div>
+            <div className="mt-4 pt-4 border-t border-border">
+              <div className="flex items-center gap-2 text-sm">
+                <TrendingUp className="h-4 w-4 text-green-500" />
+                <span className="text-muted-foreground">Rental properties</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
 
       {/* Quick Actions */}
-      <div className="bg-card border border-border rounded-lg p-6">
-        <h2 className="font-heading text-xl font-semibold text-foreground mb-4">
+      <div>
+        <h2 className="font-heading text-xl font-semibold text-foreground mb-6">
           Quick Actions
         </h2>
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           <Link
             href="/admin/add-property"
-            className="flex items-center gap-3 p-4 rounded-lg border border-border hover:bg-muted transition-colors"
+            className="group bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 hover:border-primary/50"
           >
-            <div className="p-2 bg-primary/10 rounded-lg">
-              <Plus className="h-5 w-5 text-primary" />
+            <div className="flex items-start justify-between mb-4">
+              <div className="h-12 w-12 rounded-xl bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                <Plus className="h-6 w-6 text-primary" />
+              </div>
+              <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
             </div>
-            <div>
-              <p className="font-medium text-foreground">Add New Property</p>
-              <p className="text-sm text-muted-foreground">Create a new listing</p>
-            </div>
+            <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
+              Add New Property
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Create a new property listing with images, details, and pricing information.
+            </p>
           </Link>
 
           <Link
             href="/admin/properties"
-            className="flex items-center gap-3 p-4 rounded-lg border border-border hover:bg-muted transition-colors"
+            className="group bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 hover:border-primary/50"
           >
-            <div className="p-2 bg-secondary/10 rounded-lg">
-              <Building2 className="h-5 w-5 text-secondary" />
+            <div className="flex items-start justify-between mb-4">
+              <div className="h-12 w-12 rounded-xl bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
+                <Building2 className="h-6 w-6 text-secondary" />
+              </div>
+              <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
             </div>
-            <div>
-              <p className="font-medium text-foreground">Manage Properties</p>
-              <p className="text-sm text-muted-foreground">View and edit listings</p>
+            <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
+              Manage Properties
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              View, edit, or delete existing property listings from your inventory.
+            </p>
+          </Link>
+
+          <Link
+            href="/admin/leads"
+            className="group bg-card border border-border rounded-xl p-6 shadow-sm hover:shadow-md transition-all hover:-translate-y-1 hover:border-primary/50"
+          >
+            <div className="flex items-start justify-between mb-4">
+              <div className="h-12 w-12 rounded-xl bg-green-500/10 flex items-center justify-center group-hover:bg-green-500/20 transition-colors">
+                <MessageCircle className="h-6 w-6 text-green-500" />
+              </div>
+              <ArrowRight className="h-5 w-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
             </div>
+            <h3 className="font-heading text-lg font-semibold text-foreground mb-2">
+              View Leads
+            </h3>
+            <p className="text-sm text-muted-foreground">
+              Manage property enquiries, track lead status, and follow up with potential buyers.
+            </p>
           </Link>
         </div>
       </div>
 
       {/* Info Box */}
-      <div className="mt-6 bg-blue-500/10 border border-blue-500/20 rounded-lg p-4">
-        <p className="text-sm text-blue-700 dark:text-blue-300">
-          <strong>Note:</strong> If this is your first time, make sure to set up Firebase 
-          and add your Firebase configuration in the environment variables. Properties 
-          added will appear here and on the main website.
-        </p>
+      <div className="bg-gradient-to-r from-blue-500/10 to-blue-600/10 border border-blue-500/20 rounded-xl p-6">
+        <div className="flex items-start gap-4">
+          <div className="h-10 w-10 rounded-lg bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+            <Settings className="h-5 w-5 text-blue-500" />
+          </div>
+          <div>
+            <h3 className="font-heading text-base font-semibold text-foreground mb-2">
+              Getting Started
+            </h3>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              If this is your first time, make sure to set up Firebase and add your Firebase configuration in the environment variables. Properties added will appear here and on the main website automatically.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );

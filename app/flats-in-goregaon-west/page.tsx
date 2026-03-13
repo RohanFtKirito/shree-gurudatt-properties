@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
-  title: "Flats in Goregaon West | Shree GuruDatt Properties",
+  title: "Flats in Goregaon West | Shree Guru Datta Properties",
   description: "Browse flats in Goregaon West including 1BHK, 2BHK, and 3BHK apartments. Find the best residential properties in Goregaon West, Mumbai.",
 };
 

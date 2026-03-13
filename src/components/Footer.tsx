@@ -9,7 +9,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="font-heading text-lg font-semibold">
-              Shree GuruDatt Properties
+              Shree Guru Datta Properties
             </h3>
             <p className="text-sm text-background/70 font-body leading-relaxed max-w-xs">
               Your trusted partner for residential and commercial properties in Goregaon, Mumbai.
@@ -59,7 +59,7 @@ const Footer = () => {
         </div>
 
         <div className="mt-10 pt-6 border-t border-background/20 text-center text-sm text-background/50">
-          © {new Date().getFullYear()} Shree GuruDatt Properties. All rights reserved.
+          © {new Date().getFullYear()} Shree Guru Datta Properties. All rights reserved.
         </div>
       </div>
     </footer>

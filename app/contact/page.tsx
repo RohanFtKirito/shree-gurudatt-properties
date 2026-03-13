@@ -26,7 +26,7 @@ export default function ContactPage() {
       <main className="py-16">
         <div className="container max-w-4xl">
           <h1 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-2 text-center">Contact Us</h1>
-          <p className="text-muted-foreground text-center mb-10">Get in touch with Shree GuruDatt Properties for property enquiries.</p>
+          <p className="text-muted-foreground text-center mb-10">Get in touch with Shree Guru Datta Properties for property enquiries.</p>
 
           <div className="grid gap-10 md:grid-cols-2">
             {/* Form */}
@@ -111,8 +111,8 @@ export default function ContactPage() {
 
               <div className="rounded-lg overflow-hidden">
                 <iframe
-                  title="Office Location"
-                  src="https://www.google.com/maps?q=Shree+GuruDatt+Properties+Goregaon+East+Mumbai&output=embed"
+                  title="Shree Guru Datta Properties Office Location - Goregaon East, Mumbai"
+                  src="https://www.google.com/maps?q=19.1663,72.8526&z=15&output=embed"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}
@@ -121,6 +121,19 @@ export default function ContactPage() {
                   referrerPolicy="no-referrer-when-downgrade"
                 />
               </div>
+
+              {/* View on Google Maps Button */}
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Shree+Guru+Datta+Properties+Goregaon"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-4 w-full inline-flex items-center justify-center gap-2 rounded-md bg-[#4285F4] hover:bg-[#3367D6] text-white px-5 py-3 font-heading text-sm font-semibold transition-colors"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s1.5-2.5 4-5c2.5 2.5 4 5 4 5 7-7.75 7-13 7-13s-3.13-7-7-7zm0 9.75c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                </svg>
+                View on Google Maps
+              </a>
             </div>
           </div>
         </div>

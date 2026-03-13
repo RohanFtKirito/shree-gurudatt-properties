@@ -30,10 +30,14 @@ export async function getProperties(): Promise<Property[]> {
     const q = query(collection(db, "properties"), orderBy("createdAt", "desc"));
     const snapshot = await getDocs(q);
     
-    return snapshot.docs.map((doc) => ({
-      id: doc.id,
-      ...doc.data(),
-    })) as Property[];
+    return snapshot.docs.map((doc) => {
+      const data = doc.data() as DocumentData;
+      return {
+        id: doc.id,
+        ...data,
+        createdAt: data.createdAt ? data.createdAt.toDate().toISOString() : null,
+      };
+    }) as Property[];
   } catch (error) {
     console.error("Error fetching properties:", error);
     return [];
@@ -111,9 +115,11 @@ export async function getPropertyBySlug(slug: string): Promise<Property | null> 
     
     if (!snapshot.empty) {
       const doc = snapshot.docs[0];
+      const data = doc.data() as DocumentData;
       return {
         id: doc.id,
-        ...doc.data(),
+        ...data,
+        createdAt: data.createdAt ? data.createdAt.toDate().toISOString() : null,
       } as Property;
     }
     return null;

@@ -55,7 +55,7 @@ export default function PropertyGallery({ property }: PropertyGalleryProps) {
       
       {images.length > 1 && (
         <div className="flex gap-2 overflow-x-auto pb-1">
-          {images.map((img, i) => (
+          {images.map((img: string, i: number) => (
             <button
               key={i}
               onClick={() => setCurrentImageIndex(i)}

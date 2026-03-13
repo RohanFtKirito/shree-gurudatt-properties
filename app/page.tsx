@@ -178,13 +178,115 @@ export default function HomePage() {
         {/* About Preview */}
         <section className="py-16 bg-card">
           <div className="container max-w-3xl text-center">
-            <h2 className="font-heading text-2xl md:text-3xl font-semibold text-foreground mb-4">About Shree GuruDatt Properties</h2>
+            <h2 className="font-heading text-2xl md:text-3xl font-semibold text-foreground mb-4">About Shree Guru Datta Properties</h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Shree GuruDatt Properties specializes in helping clients find the best residential and commercial properties in Goregaon and nearby areas. With deep local market knowledge and a commitment to transparency, we ensure a smooth property buying and renting experience.
+              Shree Guru Datta Properties specializes in helping clients find the best residential and commercial properties in Goregaon and nearby areas. With deep local market knowledge and a commitment to transparency, we ensure a smooth property buying and renting experience.
             </p>
             <Link href="/about" className="inline-flex items-center rounded-md bg-secondary px-5 py-2.5 font-heading text-sm font-medium text-secondary-foreground transition-colors hover:bg-secondary/80">
               Learn More About Us →
             </Link>
+          </div>
+        </section>
+
+        {/* Local SEO - Trusted Real Estate Agent Section */}
+        <section className="py-16 bg-gradient-to-br from-primary/5 to-secondary/5">
+          <div className="container max-w-4xl">
+            <div className="text-center mb-10">
+              <h2 className="font-heading text-2xl md:text-3xl font-semibold text-foreground mb-4">
+                Trusted Real Estate Agent in Goregaon East, Mumbai
+              </h2>
+              <p className="text-muted-foreground">
+                Your local property dealer for flats, apartments, and commercial spaces
+              </p>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2 mb-10">
+              <div className="space-y-4">
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+                  Why Choose Shree Guru Datta Properties?
+                </h3>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold mt-1">•</span>
+                    <span><strong>10+ Years Experience:</strong> Deep expertise in Goregaon real estate market</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold mt-1">•</span>
+                    <span><strong>Verified Listings:</strong> All properties personally verified for authenticity</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold mt-1">•</span>
+                    <span><strong>Transparent Pricing:</strong> No hidden charges in property dealings</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold mt-1">•</span>
+                    <span><strong>End-to-End Support:</strong> From property search to registration assistance</span>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="font-heading text-lg font-semibold text-foreground mb-3">
+                  Our Service Areas
+                </h3>
+                <ul className="space-y-3 text-sm text-muted-foreground">
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold mt-1">•</span>
+                    <span><strong>Flats in Goregaon East:</strong> 1BHK, 2BHK, 3BHK apartments</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold mt-1">•</span>
+                    <span><strong>Commercial Properties:</strong> Office spaces, shops, showrooms</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold mt-1">•</span>
+                    <span><strong>Property Dealer Goregaon Mumbai:</strong> Buy, sell, and rent services</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-primary font-bold mt-1">•</span>
+                    <span><strong>Rental Properties:</strong> Flats and offices for lease</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            {/* Local Keywords Section */}
+            <div className="bg-card border border-border rounded-lg p-6">
+              <h3 className="font-heading text-lg font-semibold text-foreground mb-3 text-center">
+                Specialized Properties in Goregaon
+              </h3>
+              <p className="text-sm text-muted-foreground text-center mb-4">
+                We offer comprehensive real estate services across Goregaon East and West
+              </p>
+              <div className="grid gap-3 sm:grid-cols-2 text-sm">
+                <div className="flex items-center gap-2 p-3 bg-muted rounded">
+                  <Building className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="text-foreground">Residential Flats in Goregaon East</span>
+                </div>
+                <div className="flex items-center gap-2 p-3 bg-muted rounded">
+                  <Home className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="text-foreground">2BHK & 3BHK Apartments Goregaon</span>
+                </div>
+                <div className="flex items-center gap-2 p-3 bg-muted rounded">
+                  <Building className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="text-foreground">Office Space in Goregaon</span>
+                </div>
+                <div className="flex items-center gap-2 p-3 bg-muted rounded">
+                  <Key className="h-4 w-4 text-primary flex-shrink-0" />
+                  <span className="text-foreground">Rental Properties Goregaon</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <Link
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-heading text-sm font-semibold text-primary-foreground transition-colors hover:bg-primary/90"
+              >
+                <Phone className="h-4 w-4" />
+                Consult Our Property Experts
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -208,8 +310,8 @@ export default function HomePage() {
             </div>
             <div className="mt-8 rounded-lg overflow-hidden max-w-4xl mx-auto">
               <iframe
-                title="Shree GuruDatt Properties Office Location"
-                src="https://www.google.com/maps?q=Shree+GuruDatt+Properties+Goregaon+East+Mumbai&output=embed"
+                title="Shree Guru Datta Properties Office Location"
+                src="https://www.google.com/maps?q=Shree+Guru+Datta+Properties+Goregaon+East+Mumbai&output=embed"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}

@@ -4,18 +4,20 @@ import { useEffect } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { useAuth } from "@/context/AuthContext";
-import { 
-  LayoutDashboard, 
-  PlusCircle, 
-  Building2, 
+import {
+  LayoutDashboard,
+  PlusCircle,
+  Building2,
   LogOut,
   Menu,
-  X
+  X,
+  MessageCircle,
 } from "lucide-react";
 import { useState } from "react";
 
 const adminLinks = [
   { href: "/admin", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/admin/leads", label: "Leads", icon: MessageCircle },
   { href: "/admin/add-property", label: "Add Property", icon: PlusCircle },
   { href: "/admin/properties", label: "All Properties", icon: Building2 },
 ];
@@ -125,7 +127,7 @@ export default function AdminLayout({
           <Link href="/admin" className="font-heading font-bold text-xl text-foreground">
             Admin Panel
           </Link>
-          <p className="text-xs text-muted-foreground mt-1">Shree GuruDatt Properties</p>
+          <p className="text-xs text-muted-foreground mt-1">Shree Guru Datta Properties</p>
         </div>
 
         <nav className="space-y-2">

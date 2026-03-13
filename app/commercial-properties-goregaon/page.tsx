@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
-  title: "Commercial Properties in Goregaon | Shree GuruDatt Properties",
+  title: "Commercial Properties in Goregaon | Shree Guru Datta Properties",
   description: "Browse commercial properties in Goregaon including office spaces, shops, and retail spaces. Find the perfect commercial real estate in Goregaon, Mumbai.",
 };
 

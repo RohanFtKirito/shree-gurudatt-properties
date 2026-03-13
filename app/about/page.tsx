@@ -5,8 +5,8 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export const metadata: Metadata = {
-  title: "About Us | Shree GuruDatt Properties",
-  description: "Learn about Shree GuruDatt Properties - your trusted real estate partner in Goregaon, Mumbai. We specialize in residential and commercial properties.",
+  title: "About Us | Shree Guru Datta Properties",
+  description: "Learn about Shree Guru Datta Properties - your trusted real estate partner in Goregaon, Mumbai. We specialize in residential and commercial properties.",
 };
 
 export default function AboutPage() {
@@ -16,11 +16,11 @@ export default function AboutPage() {
       <main className="py-16">
         <div className="container max-w-3xl">
           <h1 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6 text-center">
-            About Shree GuruDatt Properties
+            About Shree Guru Datta Properties
           </h1>
 
           <p className="text-muted-foreground leading-relaxed mb-8 text-center">
-            Shree GuruDatt Properties is a trusted real estate agency based in Goregaon, Mumbai. We specialize in residential and commercial property sales, purchases, and rentals across Goregaon and neighbouring areas including Malad, Kandivali, and Jogeshwari.
+            Shree Guru Datta Properties is a trusted real estate agency based in Goregaon, Mumbai. We specialize in residential and commercial property sales, purchases, and rentals across Goregaon and neighbouring areas including Malad, Kandivali, and Jogeshwari.
           </p>
 
           {/* Stats */}

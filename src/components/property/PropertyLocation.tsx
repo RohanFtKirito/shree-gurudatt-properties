@@ -4,7 +4,7 @@ interface PropertyLocationProps {
 }
 
 const DEFAULT_MAP_URL =
-  "https://www.google.com/maps?q=Shree+GuruDatt+Properties+Goregaon+East+Mumbai&output=embed";
+  "https://www.google.com/maps?q=19.1663,72.8526&z=15&output=embed";
 
 export default function PropertyLocation({
   mapEmbedUrl = DEFAULT_MAP_URL,

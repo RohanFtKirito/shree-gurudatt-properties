@@ -21,7 +21,7 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
           <span className="font-heading text-lg font-semibold text-foreground tracking-tight">
-            Shree GuruDatt <span className="text-gradient-gold">Properties</span>
+            Shree Guru Datta <span className="text-gradient-gold">Properties</span>
           </span>
         </Link>
 
