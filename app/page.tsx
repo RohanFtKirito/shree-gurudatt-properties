@@ -194,22 +194,22 @@ export default function HomePage() {
             <h2 className="font-heading text-2xl md:text-3xl font-semibold text-foreground text-center mb-10">Get In Touch</h2>
             <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4 max-w-4xl mx-auto">
               {[
-                { icon: Phone, label: "Phone", value: "+91 98765 43210", href: "tel:+919876543210" },
-                { icon: MessageCircle, label: "WhatsApp", value: "Chat with us", href: "https://wa.me/919876543210" },
-                { icon: Mail, label: "Email", value: "info@shreegurudatt.com", href: "mailto:info@shreegurudatt.com" },
-                { icon: MapPin, label: "Office", value: "Goregaon West, Mumbai", href: "#" },
+                { icon: Phone, label: "Phone", value: "+91 9167955841", href: "tel:+919167955841" },
+                { icon: MessageCircle, label: "WhatsApp", value: "Chat with us", href: "https://wa.me/919167955841" },
+                { icon: Mail, label: "Email", value: "shreegurudattproperties@gmail.com", href: "mailto:shreegurudattproperties@gmail.com" },
+                { icon: MapPin, label: "Office", value: "Goregaon East, Mumbai", href: "#" },
               ].map((item) => (
                 <a key={item.label} href={item.href} target={item.href.startsWith("http") ? "_blank" : undefined} rel="noopener noreferrer" className="flex flex-col items-center text-center p-6 rounded-lg border border-border bg-card hover:shadow-md transition-shadow">
-                  <item.icon className="h-6 w-6 text-primary mb-3" />
+                  <item.icon className="h-6 w-6 text-primary mb-3 flex-shrink-0" />
                   <span className="font-heading text-sm font-semibold text-foreground mb-1">{item.label}</span>
-                  <span className="text-sm text-muted-foreground">{item.value}</span>
+                  <span className="text-sm text-muted-foreground break-all leading-tight">{item.value}</span>
                 </a>
               ))}
             </div>
             <div className="mt-8 rounded-lg overflow-hidden max-w-4xl mx-auto">
               <iframe
                 title="Shree GuruDatt Properties Office Location"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.5!2d72.84!3d19.16!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA5JzM2LjAiTiA3MsKwNTAnMjQuMCJF!5e0!3m2!1sen!2sin!4v1600000000000"
+                src="https://www.google.com/maps?q=Shree+GuruDatt+Properties+Goregaon+East+Mumbai&output=embed"
                 width="100%"
                 height="300"
                 style={{ border: 0 }}

@@ -90,21 +90,21 @@ export default function ContactPage() {
               <div>
                 <h2 className="font-heading text-lg font-semibold text-foreground mb-4">Reach Us Directly</h2>
                 <div className="space-y-4">
-                  <a href="tel:+919876543210" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
-                    <Phone className="h-5 w-5 text-primary" />
-                    <span>+91 98765 43210</span>
+                  <a href="tel:+919167955841" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
+                    <Phone className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="break-words leading-tight">+91 9167955841</span>
                   </a>
-                  <a href="https://wa.me/919876543210" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
-                    <MessageCircle className="h-5 w-5 text-[#25D366]" />
+                  <a href="https://wa.me/919167955841" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
+                    <MessageCircle className="h-5 w-5 text-[#25D366] flex-shrink-0" />
                     <span>WhatsApp Chat</span>
                   </a>
-                  <a href="mailto:info@shreegurudatt.com" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
-                    <Mail className="h-5 w-5 text-primary" />
-                    <span>info@shreegurudatt.com</span>
+                  <a href="mailto:shreegurudattproperties@gmail.com" className="flex items-center gap-3 text-muted-foreground hover:text-foreground transition-colors">
+                    <Mail className="h-5 w-5 text-primary flex-shrink-0" />
+                    <span className="break-words leading-tight">shreegurudattproperties@gmail.com</span>
                   </a>
                   <div className="flex items-start gap-3 text-muted-foreground">
-                    <MapPin className="h-5 w-5 text-primary mt-0.5" />
-                    <span>Goregaon West, Mumbai 400104, Maharashtra, India</span>
+                    <MapPin className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
+                    <span className="break-words leading-tight">Off Gokuldham, Goregaon East, Mumbai 400065, Maharashtra, India</span>
                   </div>
                 </div>
               </div>
@@ -112,7 +112,7 @@ export default function ContactPage() {
               <div className="rounded-lg overflow-hidden">
                 <iframe
                   title="Office Location"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.5!2d72.84!3d19.16!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTnCsDA5JzM2LjAiTiA3MsKwNTAnMjQuMCJF!5e0!3m2!1sen!2sin!4v1600000000000"
+                  src="https://www.google.com/maps?q=Shree+GuruDatt+Properties+Goregaon+East+Mumbai&output=embed"
                   width="100%"
                   height="250"
                   style={{ border: 0 }}

@@ -73,9 +73,25 @@ function PropertiesContent() {
   }, []);
 
   const filtered = properties.filter((p) => {
+    // Type filter
     if (typeFilter && p.type !== typeFilter) return false;
+
+    // Status filter
     if (statusFilter && p.status !== statusFilter) return false;
-    if (configFilter && p.configuration !== configFilter) return false;
+
+    // Configuration filter - support multiple configurations (e.g., "2BHK, 3BHK")
+    if (configFilter) {
+      const propertyConfigs = p.configuration
+        ?.toString() // Ensure it's a string
+        .split(",")   // Split by comma for multiple configs
+        .map(c => c.trim().toLowerCase()) // Trim whitespace and lowercase for comparison
+        || [];
+
+      if (!propertyConfigs.includes(configFilter.toLowerCase())) {
+        return false;
+      }
+    }
+
     return true;
   });
 

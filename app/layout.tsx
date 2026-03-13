@@ -89,14 +89,14 @@ export default function RootLayout({
     description:
       "Your trusted partner for residential and commercial properties in Goregaon, Mumbai.",
     url: BASE_URL,
-    telephone: "+919876543210",
-    email: "info@shreegurudatt.com",
+    telephone: "+919167955841",
+    email: "shreegurudattproperties@gmail.com",
     address: {
       "@type": "PostalAddress",
-      streetAddress: "Goregaon West",
+      streetAddress: "Goregaon East",
       addressLocality: "Mumbai",
       addressRegion: "Maharashtra",
-      postalCode: "400104",
+      postalCode: "400065",
       addressCountry: "IN",
     },
     areaServed: {

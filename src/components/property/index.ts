@@ -1,0 +1,9 @@
+export { default as PropertyGallery } from './PropertyGallery';
+export { default as PropertyHeader } from './PropertyHeader';
+export { default as PropertyQuickInfo } from './PropertyQuickInfo';
+export { default as PropertyHighlights } from './PropertyHighlights';
+export { default as PropertyDescription } from './PropertyDescription';
+export { default as PropertyAmenities } from './PropertyAmenities';
+export { default as PropertyContactBar } from './PropertyContactBar';
+export { default as PropertyLocation } from './PropertyLocation';
+export { default as PropertyLayout } from './PropertyLayout';
